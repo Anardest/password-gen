@@ -51,10 +51,11 @@ document.addEventListener('DOMContentLoaded', () => {
             saveBtn.className = 'save-btn';
             saveBtn.innerText = 'Сохранить';
 
-            saveBtn.addEventListener('click', () => {
-                const label = prompt('Введите подпись для этого пароля:');
-                if (label) {
-                    ipcRenderer.send('save-password', {
+            saveBtn.addEventListener('click', async () => {
+                const label = await window.electronAPI.showPrompt('Введите подпись для этого пароля:');
+
+                if (label !== null && label.trim() !== '') {
+                    window.electronAPI.savePassword({
                         label: label.trim(),
                         password: password,
                         timestamp: new Date().toISOString()
