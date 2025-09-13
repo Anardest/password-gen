@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Подпись пароля</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 0;
+            padding: 20px;
+            text-align: center;
+        }
+        h2 {
+            margin-bottom: 20px;
+        }
+        input {
+            width: 90%;
+            padding: 10px;
+            font-size: 1em;
+            margin-bottom: 20px;
+        }
+        button {
+            padding: 10px 20px;
+            margin: 0 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h2>Введите подпись для пароля:</h2>
+    <input type="text" id="prompt-input">
+    <button id="ok-button">ОК</button>
+    <button id="cancel-button">Отмена</button>
+    <script>
+        const { ipcRenderer } = require('electron');
+        const input = document.getElementById('prompt-input');
+        const okButton = document.getElementById('ok-button');
+        const cancelButton = document.getElementById('cancel-button');
+
+        okButton.addEventListener('click', () => {
+            ipcRenderer.send('prompt-response', input.value);
+            window.close();
+        });
+
+        cancelButton.addEventListener('click', () => {
+            ipcRenderer.send('prompt-response', null);
+            window.close();
+        });
+    </script>
+</body>
+</html>
