@@ -1,0 +1,14 @@
+{
+  "name": "electron-app",
+  "version": "1.0.0",
+  "description": "electron part of the main application",
+  "main": "src/main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Anardest",
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^38.1.2"
+  }
+}
