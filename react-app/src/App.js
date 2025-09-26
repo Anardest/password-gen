@@ -1,9 +1,10 @@
 import React from 'react';
+import PasswordController from 'pages/PassGenerator/PasswordController';
 
 function App() {
   return (
-    <div>
-      <h1>My Electron + React App</h1>
+    <div className='card'>
+      <PasswordController/>
     </div>
   );
 }
