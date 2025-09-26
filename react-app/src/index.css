@@ -1,0 +1,129 @@
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #f5f7fa;
+}
+
+.page_center {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+}
+
+.card {
+  background: white;
+  border-radius: 12px;
+  width: 460px;
+  min-height: 480px;
+  padding: 24px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.card_top {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 20px;
+  margin-bottom: 18px;
+  justify-content: center;
+}
+
+.card_item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex: 1 0 45%;
+  min-width: 150px;
+}
+
+.card_item input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+}
+
+.card_input {
+  width: 100%;
+  padding: 8px 12px;
+  border-radius: 6px;
+  border: 1px solid #d0d5dd;
+  font-size: 1em;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.card_input:focus {
+  border-color: #1976d2;
+}
+
+.btn {
+  width: 100%;
+  background: #1976d2;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 0;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.25s ease;
+}
+
+.btn:hover {
+  background: #125aa4;
+}
+
+.card_bottom {
+  width: 100%;
+  flex-grow: 1;
+  overflow-y: auto;
+  border-top: 1px solid #e2e6eb;
+  padding-top: 16px;
+  
+}
+
+.passwords_list {
+  max-height: 260px;
+  overflow-y: auto;
+  padding-right: 8px;
+  
+}
+
+.password_item {
+    white-space: nowrap;        /* Запрет переноса текста */
+  overflow-x: auto;           /* Горизонтальная прокрутка при переполнении */
+  max-width: 100%;            /* Ограничение ширины */
+  gap: 8px;
+  padding: 8px;
+  border-bottom: 2px solid #e2dfdf;
+  font-family: monospace;
+  font-size: 1.1em;
+  border-radius: 12px;
+}
+
+.btn-copy {
+    width: 3rem;
+  background: #ddd;
+  color: #333;
+  padding: 4px 8px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  font-size: 1em;
+  transition: background 0.2s;
+}
+
+.btn-copy:hover {
+  background: #bbb;
+}
+
+.password_text {
+  user-select: all;           /* Позволяет выделять пароль целиком одним кликом */
+  overflow: hidden;
+  text-overflow: ellipsis;    /* Если нужно, показать сокращение с многоточием (опционально) */
+}
+
